@@ -6,11 +6,13 @@ import (
 )
 
 func main() {
+
 	fmt.Println("Learning Url ")
 	myurl := "https://www.example.com/path/to/resource?key1=value1&key2=value2"
 	fmt.Printf("Type of Url :%T\n", myurl)
 	fmt.Println(myurl)
 
+	// 	Parsing URL : The url.Parse function is used to parse a string into  Url Object
 	parseUrl, err := url.Parse(myurl)
 	if err != nil {
 		fmt.Println(" Can't parse URL", err)
@@ -18,8 +20,6 @@ func main() {
 	}
 	fmt.Println(" URL is :", parseUrl)
 	fmt.Printf("Type of the Url is : %T\n", parseUrl)
-
-	// 	Parsing URL : The url.Parse function is used to parse a string into  Url Object
 
 	// Accessing URL Components:
 	//	Once we have the URL Object , we can access its components using various fields:
@@ -39,8 +39,9 @@ func main() {
 	parseUrl.Path = "/newPath"
 	parseUrl.RawQuery = "username=MridulPandey"
 
-	//	Constructing a URl string from a url string
+	//	Constructing a URl string from  url string
 	newUrl := parseUrl.String()
+
 	fmt.Println("newUrl is :", newUrl)
 
 }
