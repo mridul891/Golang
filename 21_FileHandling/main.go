@@ -54,10 +54,10 @@ func Write() {
 	defer file.Close()
 
 	content := "Hello by Mridul Pandey the jod content creator"
-	byte, error := io.WriteString(file, content+"\n")
+	byte, errors := io.WriteString(file, content+"\n")
 	fmt.Println("Byte written", byte)
-	if error != nil {
-		fmt.Println("Error while writing file :", error)
+	if errors != nil {
+		fmt.Println("Error while writing file :", errors)
 	}
 
 	// io.WriteString returns us 2 variables :
